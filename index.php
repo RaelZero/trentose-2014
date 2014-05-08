@@ -7,8 +7,8 @@
         <link type="text/css" rel="css/main.css"
     </head>
     <body>
-        <header></header>
+        <header>Blank</header>
         <div>Qui non c'è ancora un cavolo!</div>
-        <footer></footer>
+        <footer>Blank as well</footer>
     </body>
 </html>
