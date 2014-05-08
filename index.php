@@ -4,7 +4,7 @@
         <title>Mega sito tipo TripAdvisor!</title>
         <meta charset="utf-8">
         
-        <link type="text/css" rel="css/main.css"
+        <link type="stylesheet" rel="css/main.css"
     </head>
     <body>
         <header>Blank</header>
