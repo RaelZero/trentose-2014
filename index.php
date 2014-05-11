@@ -8,7 +8,13 @@
     </head>
     <body>
         <header>Blank</header>
-        <div>Qui non c'è ancora un cavolo!</div>
+        <div id="mapframe">
+            <iframe id="map"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgOGVYe_2bYYuYCn4DMdRwWpS950k9cME
+                &q=Space+Needle,Seattle+WA">
+            </iframe>
+        </div>
         <footer>Blank as well</footer>
     </body>
 </html>
