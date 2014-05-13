@@ -7,7 +7,13 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <header>Blank</header>
+        <header>
+            <span>PinFood</span>
+            <button>IT</button>
+            <button>EN</button>
+            <button>Log In</button>
+            <button>Search</button>
+        </header>
         <div id="mapframe">
             <iframe id="map"
                 frameborder="0" style="border:0"
