@@ -14,7 +14,7 @@ header{
 }
 
 footer{
-    position: fixed;
+    position: static;
     bottom: 0px;
     
     width: 100%;
