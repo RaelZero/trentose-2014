@@ -9,12 +9,10 @@
     <body>
         <header>
             <span>PinFood</span>
-            <button>Search</button>
-            <button>Log In</button>
-            <button>IT</button>
-            <button>EN</button>
-        </header>
-        
+            <button><img src="http://icons.iconarchive.com/icons/visualpharm/icons8-metro-style/512/Very-Basic-Search-icon.png"/></button>
+            <button ID="login">Login</button>
+            <button><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRuSrkS0Yv1sVIazMs1wQZCkEGmUEar1FvT_p-F2SblG7-SSU9K1QhbXg"/></button>
+            <button><img src="http://www.gruppoitalcem.it/wp-content/uploads/2010/03/flag_icon_gb.gif"/></button>
         <div id="mapframe">
             <iframe id="map"
                 frameborder="0" style="border:0"
