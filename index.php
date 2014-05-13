@@ -13,6 +13,8 @@
             <button id="login">Login</button>
             <button><img src="img/it.svg" width="50px" height="auto" /></button>
             <button><img src="img/uk.svg" width="50px" height="auto" /></button>
+            <button><img src="img/addpin.svg" width="auto" height="35px"                /></button>
+        </header>
         <div id="mapframe">
             <iframe id="map"
                 frameborder="0" style="border:0"
