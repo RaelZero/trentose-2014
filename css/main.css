@@ -13,6 +13,10 @@ header{
     height: 85%;
 }
 
+button{
+    float: right;
+}
+
 footer{
     position: fixed;
     bottom: 0px;
