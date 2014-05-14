@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Mega sito tipo TripAdvisor!</title>
+        <title>PinFood!</title>
         <meta charset="utf-8">
         
         <link rel="stylesheet" href="css/main.css">
-        <script src="script.js"></script>
+        <script src="js/script.js"></script>
 
     </head>
     <body>
         <header>
-            <span>PinFood</span>
+            <img class="logo" src="img/amazing_logo.png" height="auto" width="auto" >
             <button class="click"><img src="img/magnifierglass.svg" width="auto" height="30px"></button>
             <button class="click login"><a href="#" >Login</a>
                 <div class="popup">
