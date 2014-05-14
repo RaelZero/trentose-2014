@@ -4,5 +4,5 @@ $(document).ready(function() {
         $(".close").click(function(e) { 
             $(".popup, .overlay").hide(); 
         }); 
-    });
+    }); 
 });

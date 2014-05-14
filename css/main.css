@@ -10,7 +10,7 @@ header{
     vertical-align: middle;
 }
 
-#map, #mapframe, #map-canvas{
+#map, #mapframe{
     width: 100%;
     height: 550px;
 }
