@@ -1,8 +1,15 @@
 $(document).ready(function() {
-    $(".login").click(function(e) {
-        $("#mapframe").append( );  $(".popup").show(); 
-        $(".close").click(function(e) {
-            $(".popup, .overlay").hide(); 
-        }); 
-    }); 
+    $(".overlay").hide();
+    
+    $(".login").click(function( ) {
+        $(".popup").show();
+        $(".overlay").show();
+    });
+    
+    $(".overlay").click(function() {
+        $(".overlay").hide();
+        $(".popup").hide();
+    });
 });
+
+    
