@@ -68,7 +68,19 @@ footer{
 	height: 100%;
 }
  
-.popup {
+.popup_log{
+	padding: 10px 10px 35px;
+	background: rgba(255, 255, 255, .5);
+	z-index: 999;
+	display: none;
+	position: absolute;
+    top: 60px;
+	right: 0;
+    text-align:center;
+    border-radius: 5px;
+    font-family:Trebuchet MS;
+}
+.popup_add{
 	padding: 10px 10px 35px;
 	background: rgba(255, 255, 255, .5);
 	z-index: 999;
@@ -81,6 +93,75 @@ footer{
     font-family:Trebuchet MS;
 }
 
+.popup_add span{
+    display: block;
+    width: 100px;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.popup_search{
+	padding: 10px 10px 35px;
+	background: rgba(255, 255, 255, .5);
+	z-index: 999;
+	display: none;
+	position: absolute;
+    top: 60px;
+	right: 0;
+    text-align:center;
+    border-radius: 5px;
+    font-family:Trebuchet MS;
+}
+.popup_search span{
+    display: block;
+    width: 100px;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+.pin{
+    margin-top: 200px;
+    margin-left: 400px;
+    z-index: 999;
+    position: absolute;
+}
+.popup_pin{
+	padding: 10px 10px 35px;
+	background: rgba(255, 255, 255, .5);
+	z-index: 999;
+	display: none;
+	position: absolute;
+    top: 200px;
+	right: 0;
+    text-align:center;
+    border-radius: 5px;
+    font-family:Trebuchet MS;
+}
+.popup_pin span{
+    display: block;
+    width: 100px;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
 img{
     width:60px;
 }
+<!-- Volevamo cambiare il tasto del log in nel popup....
+blog {
+	background-color:#FC7624;
+	border-radius: 7px;
+	text-indent:0;
+	border:1px solid #DF3A01;
+	font-family:Trebuchet MS;
+	font-size:12px;
+	font-weight:bold;
+	font-style:normal;
+	line-height:35px;
+	width:78px;
+	text-align:center;
+    margin-left:2px;
+    margin-right:2px;
+}-->
