@@ -24,7 +24,7 @@
         <header>
             
             <img class="logo" src="img/amazing_logo.png" height="auto" width="auto" >
-            <button class="click search"><img src="img/magnifierglass.svg" width="auto" height="30px"></button>
+            <button class="click search"><img src="img/magnifierglass.svg"></button>
             <div class="popup_search">
                 <form>
                     <p><span class="title">Nome</span> <input name="" type="text" /></p>
@@ -45,10 +45,10 @@
                 </form>
             </div>
             
-            <button class="click"><img src="img/it.svg" width="50px" height="auto" /></button>
-            <button class="click"><img src="img/uk.svg" width="50px" height="auto" /></button>
+            <button class="click"><img src="img/it.svg"/></button>
+            <button class="click"><img src="img/uk.svg"/></button>
             
-            <button class="click add"><img src="img/addpin.svg" width="auto" height="35px" /></button>
+            <button class="click add"><img src="img/addpin.svg" /></button>
              <div class="popup_add">
                 <form>
                     <p><span class="title">Nome</span> <input name="" type="text" /></p>
@@ -60,8 +60,7 @@
                     <p><input name="" type="button" value="Aggiungi" /></p>
                 </form>
             </div>
-            <div class="pin"> <img src="img/map-pin-red.svg" width="auto" height="35px" />
-            </div>
+            
             <div class="popup_pin">
                 <form>
                     <p><span class="title">Tags</span> <input name="" type="text" /></p>
