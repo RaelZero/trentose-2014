@@ -1,14 +1,16 @@
 $(document).ready(function() {
+    // Start by hiding the overlay from the map
     $(".overlay").hide();
     
+    // Hide & Show operations    
     $(".login").click(function( ) {
-        $(".popup_log").show();
+        $(".popup_login").show();
         $(".overlay").show();
     });
     
     $(".overlay").click(function() {
         $(".overlay").hide();
-        $(".popup_log").hide();
+        $(".popup_login").hide();
     });
     
     $(".add").click(function( ) {
@@ -40,5 +42,6 @@ $(document).ready(function() {
         $(".overlay").hide();
         $(".popup_pin").hide();
     });
+    
     
 });
