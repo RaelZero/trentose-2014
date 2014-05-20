@@ -61,6 +61,6 @@ function pin_insert ($place){
   
 */
 
-pin_load
+pin_load();
  
 ?>
