@@ -8,9 +8,7 @@ $(document).ready(function() {
     }
     else {
       alert('geolocation not supported');
-    }    
-    
-    PinFoodMap.addSampleMarker(navigator.geolocation.getCurrentPosition());
+    }
     
     // Hide & Show operations    
     $(".login").click(function( ) {
@@ -53,6 +51,7 @@ $(document).ready(function() {
         $(".popup_pin").hide();
     });
     
+    PinFoodMap.addSampleMarker(navigator.geolocation.getCurrentPosition());
 });
 
 
