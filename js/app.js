@@ -50,12 +50,12 @@ $(document).ready(function() {
         $(".overlay").hide();
         $(".popup_pin").hide();
     });
-    
-    PinFoodMap.addSampleMarker(navigator.geolocation.getCurrentPosition());
+
 });
 
 
 PinFoodMap = {
+
     loadMap : function (position) {
      
         // Position conversion
@@ -71,14 +71,26 @@ PinFoodMap = {
         };
         
         PinFoodMap.map = new google.maps.Map(document.getElementById("map"), myOptions);
+    
+        var myPos = new google.maps.LatLng(46.066145, 11.150349);
+
+        var marker = new google.maps.Marker({
+            position : myPos,
+            title : "Marker gnurante"
+        });
+
+        marker.setMap(PinFoodMap.map);
+    },
+  
+    addSampleMarker: function (pos) {
+        var sampleMarker = new google.maps.Marker({
+            position: pos,
+            title: "Fucking funziona!"
+        });
+
+        sampleMarker.setMap(PinFoodMap.map);
     },
     
-    addSampleMarker: function (pos){
-        var sampleMarker = new google.maps.Marker({
-            position: pos;
-            title: "Fucking funziona!";
-        });
-    },
     
     addPin: function (){
     
