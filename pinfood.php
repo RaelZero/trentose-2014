@@ -6,8 +6,8 @@ function db_connect(){
     $user = "trentose";
     $pass = "CYQhjxVc6JF5LY5c";
 
-    return new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);  
-    
+    return new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+    echo("Now connected to DB.\n");
 }
 
 
@@ -17,14 +17,13 @@ function pin_load (){//non sono un cazzo sicuro che vada con le natural join(ris
         // open database
         $dbh = db_connect();   
 
+        $fp = fopen('pins.json', 'w');
         foreach ($dbh->query($PIN_LOAD_SQL) as $row){
-            
-	    $fp = fopen('results.json', 'w');
-	    fwrite($fp, json_encode($row));
-            fclose($fp);
-
-            
+            fwrite($fp, json_encode($row));            
         }
+        
+        fclose($fp);
+        echo("Finished writing on JSON file, now availible at pins.json\n");
 
         // close database
         $dbh = null;
@@ -61,5 +60,7 @@ function pin_insert ($place){
 } 
   
 */
+
+pin_load
  
 ?>
