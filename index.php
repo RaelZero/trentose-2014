@@ -69,8 +69,7 @@
                 </form>
             </div>
         </header>
-        <div id="mapframe">
-            <div id="map-canvas" />
+        <div id="map">
         </div>
         
         <footer>Made in Trento, TESTWAFFE 2014</footer>
