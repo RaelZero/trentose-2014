@@ -10,6 +10,8 @@ $(document).ready(function() {
       alert('geolocation not supported');
     }    
     
+    PinFoodMap.addSampleMarker(navigator.geolocation.getCurrentPosition());
+    
     // Hide & Show operations    
     $(".login").click(function( ) {
         $(".popup_login").show();
@@ -70,6 +72,13 @@ PinFoodMap = {
         };
         
         PinFoodMap.map = new google.maps.Map(document.getElementById("map"), myOptions);
+    },
+    
+    addSampleMarker: function (pos){
+        var sampleMarker = new google.maps.Marker({
+            position: pos;
+            title: "Fucking funziona!";
+        });
     },
     
     addPin: function (){
