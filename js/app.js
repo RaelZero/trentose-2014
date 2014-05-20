@@ -2,6 +2,15 @@ $(document).ready(function() {
     // Start by hiding the overlay from the map
     $(".overlay").hide();
     
+    // Render the map
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(PinFoodMap.loadMap);        
+    }
+    
+    else {
+      alert(' geolocationnot supported');
+    }    
+    
     // Hide & Show operations    
     $(".login").click(function( ) {
         $(".popup_login").show();
@@ -45,3 +54,28 @@ $(document).ready(function() {
     
     
 });
+
+
+PinFoodMap = {
+    loadMap : function (position) {
+     
+        // we convert the position in the format of google maps
+        var latlng = new google.maps.LatLng(position.coords.latitude,
+                                            position.coords.longitude);
+        
+        // let's set some general options
+        var myOptions = {
+            zoom: 15,
+            center: latlng,
+            mapTypeControl: false,
+            navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        
+        // let's render the map
+        PinFoodMap.map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+    },
+    
+    
+    
+};

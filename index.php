@@ -16,7 +16,7 @@
         
         <!-- Our scripts -->
         <script type="text/javascript" src="js/app.js"></script>
-        <script type="text/javascript" src="js/gmaps.js"></script>
+        <!--<script type="text/javascript" src="js/gmaps.js"></script>-->
     </head>
     
     <body>
