@@ -1,4 +1,4 @@
-header{
+ header{
     position: static;
     top: 0px;
     
@@ -44,17 +44,17 @@ footer{
 .login {
 	background-color:#79C9FF;
 	border-radius: 5px;
-	text-indent:0;
-	border:1px solid #79C9FF;
-	font-family:Trebuchet MS;
-	font-size:19px;
-	font-weight:bold;
-	font-style:normal;
-	line-height:42px;
-	width:100px;
-	text-align:center;
-    margin-left:2px;
-    margin-right:2px;
+	text-indent: 0;
+	border: 1px solid #79C9FF;
+	font-family: Trebuchet MS;
+	font-size: 19px;
+	font-weight: bold;
+	font-style: normal;
+	line-height: 42px;
+	width: 100px;
+	text-align: center;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .overlay {
@@ -68,7 +68,7 @@ footer{
 	height: 100%;
 }
  
-.popup_log{
+.popup_login{
 	padding: 10px 10px 35px;
 	background: rgba(255, 255, 255, .5);
 	z-index: 999;
@@ -78,7 +78,7 @@ footer{
 	right: 0;
     text-align:center;
     border-radius: 5px;
-    font-family:Trebuchet MS;
+    font-family: Trebuchet MS;
 }
 .popup_add{
 	padding: 10px 10px 35px;
