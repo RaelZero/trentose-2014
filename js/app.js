@@ -7,7 +7,7 @@ $(document).ready(function() {
         navigator.geolocation.getCurrentPosition(PinFoodMap.loadMap);        
     }
     else {
-      alert(' geolocationnot supported');
+      alert('geolocation not supported');
     }    
     
     // Hide & Show operations    
@@ -69,6 +69,6 @@ PinFoodMap = {
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         
-        PinFoodMap.map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+        PinFoodMap.map = new google.maps.Map(document.getElementById("map"), myOptions);
     }
 };
