@@ -15,7 +15,7 @@
                 &sensor=FALSE"></script>
         
         <!-- Our scripts -->
-        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/gmaps.js"></script>
     </head>
     
@@ -34,8 +34,9 @@
                 </form>
             </div>
             
+            <!-- Login subwindow -->
             <button class="click login">Login</button>
-            <div class="popup_log">
+            <div class="popup_login">
                 <form>
                     <p><span class="title">Username</span> <input name="" type="text" /></p>
                     <p><span class="title">Password</span> <input name="" type="password" /></p>
