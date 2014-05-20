@@ -51,7 +51,6 @@ $(document).ready(function() {
         $(".popup_pin").hide();
     });
     
-    google.maps.event.addDomListener(window, 'load', initialize);
 });
 
 
@@ -59,21 +58,17 @@ PinFoodMap = {
     loadMap : function (position) {
      
         // Position conversion
-        var latlng = new google.maps.LatLng(position.coords.latitude,
-                                            position.coords.longitude);
+        var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         
         // let's set some general options
         var myOptions = {
             zoom: 15,
             center: latlng,
-            mapTypeControl: true,
+            mapTypeControl: false,
             navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         
         PinFoodMap.map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
     }
-    
-    
-    
 };
