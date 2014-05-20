@@ -18,6 +18,7 @@ function pin_load (){//non sono un cazzo sicuro che vada con le natural join(ris
         $dbh = db_connect();   
 
         $fp = fopen('pins.json', 'w');
+	echo $fp;
         foreach ($dbh->query($PIN_LOAD_SQL) as $row){
             fwrite($fp, json_encode($row));            
         }
