@@ -8,10 +8,9 @@ header{
     background-color: #06569E;
     
     vertical-align: middle;
-    z-index: 6;
 }
 
-#map, #mapframe, #map-canvas{
+#map, #mapframe{
     width: 100%;
     height: 550px;
 }
@@ -21,14 +20,6 @@ header{
     height:42px;
     display:inline-block;
     margin-top:4px;
-}
-
-img.logo {
-    max-width:230px;
-    max-height:95px;
-    width: auto;
-    height: auto;
-    z-index: -1;
 }
 
 footer{
@@ -43,18 +34,21 @@ footer{
 
 .login {
 	background-color:#79C9FF;
-	border-radius: 5px;
+	border-radius:5px;	
 	text-indent:0;
 	border:1px solid #79C9FF;
+	color: white;
 	font-family:Trebuchet MS;
 	font-size:19px;
 	font-weight:bold;
 	font-style:normal;
 	line-height:42px;
 	width:100px;
+	text-decoration:none;
 	text-align:center;
     margin-left:2px;
     margin-right:2px;
+    z-index: 0;
 }
 
 .overlay {
@@ -62,106 +56,19 @@ footer{
 	background: rgba(0, 0, 0, .50);
 	display: block;
 	position: fixed;
-    top: 0;
-    left: 0;
 	width: 100%;
 	height: 100%;
 }
  
-.popup_log{
+.popup {
 	padding: 10px 10px 35px;
-	background: rgba(255, 255, 255, .5);
+	background: #fff;
 	z-index: 999;
 	display: none;
 	position: absolute;
-    top: 60px;
 	right: 0;
-    text-align:center;
-    border-radius: 5px;
-    font-family:Trebuchet MS;
-}
-.popup_add{
-	padding: 10px 10px 35px;
-	background: rgba(255, 255, 255, .5);
-	z-index: 999;
-	display: none;
-	position: absolute;
-    top: 60px;
-	right: 0;
-    text-align:center;
-    border-radius: 5px;
-    font-family:Trebuchet MS;
-}
-
-.popup_add span{
-    display: block;
-    width: 100px;
-    float: left;
-    margin-bottom: 5px;
-    margin-right: 5px;
-}
-
-.popup_search{
-	padding: 10px 10px 35px;
-	background: rgba(255, 255, 255, .5);
-	z-index: 999;
-	display: none;
-	position: absolute;
-    top: 60px;
-	right: 0;
-    text-align:center;
-    border-radius: 5px;
-    font-family:Trebuchet MS;
-}
-.popup_search span{
-    display: block;
-    width: 100px;
-    float: left;
-    margin-bottom: 5px;
-    margin-right: 5px;
-}
-.pin{
-    margin-top: 200px;
-    margin-left: 400px;
-    z-index: 999;
-    position: absolute;
-}
-.popup_pin{
-	padding: 10px 10px 35px;
-	background: rgba(255, 255, 255, .5);
-	z-index: 999;
-	display: none;
-	position: absolute;
-    top: 200px;
-	right: 0;
-    text-align:center;
-    border-radius: 5px;
-    font-family:Trebuchet MS;
-}
-.popup_pin span{
-    display: block;
-    width: 100px;
-    float: left;
-    margin-bottom: 5px;
-    margin-right: 5px;
 }
 
 img{
     width:60px;
 }
-<!-- Volevamo cambiare il tasto del log in nel popup....
-blog {
-	background-color:#FC7624;
-	border-radius: 7px;
-	text-indent:0;
-	border:1px solid #DF3A01;
-	font-family:Trebuchet MS;
-	font-size:12px;
-	font-weight:bold;
-	font-style:normal;
-	line-height:35px;
-	width:78px;
-	text-align:center;
-    margin-left:2px;
-    margin-right:2px;
-}-->
