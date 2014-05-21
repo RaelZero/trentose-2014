@@ -34,7 +34,7 @@
                 </form>
             </div>
             
-            <!-- Login subwindow -->
+            <!-- Login subwindow-->
             <button class="click login">Login</button>
             <div class="popup_login">
                 <form>

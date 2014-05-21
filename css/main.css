@@ -1,3 +1,8 @@
+@media screen and (max-width: 600px) {.login {font-size:80%}}
+@media screen and (min-width: 600px) {.login {font-size:90%}}
+@media screen and (min-width: 1000px) {.login {font-size:100%}}
+@media screen and (min-width: 1200px) {.login {font-size:110%}}
+
 header{
     position: static;
     top: 0px;
@@ -6,7 +11,6 @@ header{
     max-width: 100%;
     max-height: 50px;
     background-color: #06569E;
-    
     vertical-align: middle;
     z-index: 6;
 }
@@ -18,25 +22,27 @@ header{
 
 .click{
     float: right;
-    width: 90px;
-    display:inline-block;
-    margin-right:2px;
+    position: relative;
+    max-width: auto;
+    max-height: auto;
+    margin-right: 2px;
     height: inherit;
+    width: inherit;
 }
 
 .click > img{
     max-width: 230px;
-    max-height: 35px;
-    width: auto;
-    height: auto;
+    max-height: 70%;
+    width: inherit;
+    height: inherit;
     z-index: -1;
     
 }
 img.logo {
     max-width: 230px;
     max-height: 100%;
-    width: auto;
-    height: auto;
+    width: inherit;
+    height: inherit;
     z-index: -1;
 }
 
@@ -55,14 +61,16 @@ footer{
 	border-radius: 5px;
 	text-indent: 0;
 	border: 1px solid #79C9FF;
+    display: inline-block;
 	font-family: Trebuchet MS;
-	font-size: 19px;
 	font-weight: bold;
 	font-style: normal;
-	line-height: 42px;
+	line-height: 40px;
 	text-align: center;
     margin-left: 2px;
     margin-right: 2px;
+    font-size:  ;
+    
 }
 
 .overlay {
