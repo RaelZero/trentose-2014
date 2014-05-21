@@ -17,12 +17,14 @@ function pin_load (){//non sono un cazzo sicuro che vada con le natural join(ris
         // open database
         $dbh = db_connect();   
 
-        $fp = fopen('pins.json', 'w');
-	echo $fp;
-        foreach ($dbh->query($PIN_LOAD_SQL) as $row){
-            fwrite($fp, json_encode($row));            
-        }
-        
+        $fp = fopen('pins.json', 'rw');
+	
+	$rows = array();
+	while($r = mysql_fetch_assoc($sth)) 
+	{
+    		$rows['pin'][] = $r;
+	}
+        fwrite($fp, json_encode($rows));
         fclose($fp);
         echo("Finished writing on JSON file, now availible at pins.json\n");
 
