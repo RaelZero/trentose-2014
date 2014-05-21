@@ -1,8 +1,10 @@
-$(document).ready(function() {
-    // Start by hiding the overlay from the map
+var markerMode = false;
+
+$(document).ready (function() {
+    // Start by hiding the overlay from the main window
     $(".overlay").hide();
     
-    // Render the map using geolocation
+    // Render the map using geolocation, if availible
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(PinFoodMap.loadMap);        
     }
@@ -10,47 +12,31 @@ $(document).ready(function() {
       alert('geolocation not supported');
     }
     
-    // Hide & Show operations    
-    $(".login").click (function() {
+    // Hide & Show operations
+    $(".login").click(function( ) {
         $(".popup_login").show();
         $(".overlay").show();
     });
     
-    $(".overlay").click (function() {
-        $(".overlay").hide();
-        $(".popup_login").hide();
-    });
-    
-    var toggle = false;
     $(".add").click(function( ) {
-        toggle = !toggle;
+        markerMode = !markerMode;
         
-        /*
-        $(".popup_add").show();
-        $(".overlay").show();
-        */
-    });
-    
-    $(".map").click(function(){
-        if(toggle){
-            PinFoodMap.addMarker();
-            toggle = !toggle;
+        if(markerMode){
+            $(".popup_add").show();
+            $(".overlay").show();
+            $(".add").css('z-index', '7');
         }
-    });
-    
-    $(".overlay").click(function() {
-        $(".overlay").hide();
-        $(".popup_add").hide();
+        
+        else{
+            $(".popup_add").hide();
+            $(".overlay").hide();
+            $(".add").css('z-index', '0');
+        }
     });
     
     $(".search").click(function( ) {
         $(".popup_search").show();
         $(".overlay").show();
-    });
-    
-    $(".overlay").click(function() {
-        $(".overlay").hide();
-        $(".popup_search").hide();
     });
     
     $(".pin").click(function( ) {
@@ -59,16 +45,17 @@ $(document).ready(function() {
     });
     
     $(".overlay").click(function() {
-        $(".overlay").hide();
-        $(".popup_pin").hide();
+        if(!markerMode){
+            $(".overlay").hide();
+        }
+        
+        $("div[class*='popup_']").hide();
     });
 
-    PinFoodMap.addSampleMarker();
 });
 
 
 PinFoodMap = {
-    map : new Object(),
 
     loadMap : function (position) {
      
@@ -85,14 +72,7 @@ PinFoodMap = {
         };
         
         PinFoodMap.map = new google.maps.Map(document.getElementById("map"), myOptions);
-    },
     
-    addMarker: function(){
-        console.log("Just what I expected...");
-    },
-        
-        
-    addSampleMarker: function () {
         var myPos = new google.maps.LatLng(46.066145, 11.150349);
 
         var marker = new google.maps.Marker({
@@ -102,9 +82,18 @@ PinFoodMap = {
 
         marker.setMap(PinFoodMap.map);
     },
-    
-    
-    addPin: function (){
-    
+  
+    addSampleMarker: function (pos) {
+        var sampleMarker = new google.maps.Marker({
+            position: pos,
+            title: "Fucking funziona!"
+        });
+
+        sampleMarker.setMap(PinFoodMap.map);
     },
+    
+    
+    addPin: function () {
+    
+    }
 };
