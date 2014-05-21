@@ -11,12 +11,12 @@ $(document).ready(function() {
     }
     
     // Hide & Show operations    
-    $(".login").click(function( ) {
+    $(".login").click (function() {
         $(".popup_login").show();
         $(".overlay").show();
     });
     
-    $(".overlay").click(function() {
+    $(".overlay").click (function() {
         $(".overlay").hide();
         $(".popup_login").hide();
     });
@@ -24,16 +24,18 @@ $(document).ready(function() {
     var toggle = false;
     $(".add").click(function( ) {
         toggle = !toggle;
-        if (toggle){
-            $(".map").click(function(){
-                PinFoodMap.addMarker();
-                toggle = !toggle;
-            });
-        }
+        
         /*
         $(".popup_add").show();
         $(".overlay").show();
         */
+    });
+    
+    $(".map").click(function(){
+        if(toggle){
+            PinFoodMap.addMarker();
+            toggle = !toggle;
+        }
     });
     
     $(".overlay").click(function() {
