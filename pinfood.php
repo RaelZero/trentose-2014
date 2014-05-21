@@ -1,42 +1,50 @@
 <?php
 
-function db_connect(){
+function db_connect()
+{
     $host = "localhost";
     $dbname = "trentose";
     $user = "trentose";
     $pass = "CYQhjxVc6JF5LY5c";
 
-    return new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+    $connection = mysql_connect($host,$user,$pass);
     echo("Now connected to DB.\n");
+    echo($connection);
+    return $connection;
 }
 
 
-function pin_load (){//non sono un cazzo sicuro che vada con le natural join(ristrutturare con where)
-    $PIN_LOAD_SQL = "select * from places";
-    try {
-        // open database
-        $dbh = db_connect();   
-
-        $fp = fopen('pins.json', 'rw');
+function pin_load (){
+    $PIN_LOAD_SQL = "select * from trentose.places";
+    
 	
+//         open database
+        $dbh = db_connect();   
+	
+        $fp = fopen('pins.json', 'w+');
+	$sth = mysql_query($PIN_LOAD_SQL);
 	$rows = array();
 	while($r = mysql_fetch_assoc($sth)) 
 	{
-    		$rows['pin'][] = $r;
+    		$rows[] = $r;
+		
 	}
-	echo $rows;
+
+	echo json_encode($rows);
+
+	
+	
         fwrite($fp, json_encode($rows));
         fclose($fp);
         echo("Finished writing on JSON file, now availible at pins.json\n");
-
+	
         // close database
+	
         $dbh = null;
-    }
-    catch(PDOException $e){
-        echo $e->getMessage();
-    } 
+    	
+    
 }
-/* 
+/*
 function pin_insert ($place){
     $PIN_INSERT_SQL = "INSERT INTO places(name, address, lat, lng)".
                       " values (:place_name, :place_address, :place_lat, :place_lng)";
