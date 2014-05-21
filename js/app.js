@@ -21,9 +21,19 @@ $(document).ready(function() {
         $(".popup_login").hide();
     });
     
+    var toggle = false;
     $(".add").click(function( ) {
+        toggle = !toggle;
+        if (toggle){
+            $(".map").click(function(){
+                PinFoodMap.addMarker();
+                toggle = !toggle;
+            });
+        }
+        /*
         $(".popup_add").show();
         $(".overlay").show();
+        */
     });
     
     $(".overlay").click(function() {
@@ -73,6 +83,10 @@ PinFoodMap = {
         };
         
         PinFoodMap.map = new google.maps.Map(document.getElementById("map"), myOptions);
+    },
+    
+    addMarker: function(){
+        console.log("Just what I expected...");
     },
         
         
