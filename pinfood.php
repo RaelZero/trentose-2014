@@ -24,6 +24,7 @@ function pin_load (){//non sono un cazzo sicuro che vada con le natural join(ris
 	{
     		$rows['pin'][] = $r;
 	}
+	echo $rows;
         fwrite($fp, json_encode($rows));
         fclose($fp);
         echo("Finished writing on JSON file, now availible at pins.json\n");
