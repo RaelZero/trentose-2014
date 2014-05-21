@@ -51,10 +51,12 @@ $(document).ready(function() {
         $(".popup_pin").hide();
     });
 
+    PinFoodMap.addSampleMarker();
 });
 
 
 PinFoodMap = {
+    map : new Object(),
 
     loadMap : function (position) {
      
@@ -71,7 +73,10 @@ PinFoodMap = {
         };
         
         PinFoodMap.map = new google.maps.Map(document.getElementById("map"), myOptions);
-    
+    },
+        
+        
+    addSampleMarker: function () {
         var myPos = new google.maps.LatLng(46.066145, 11.150349);
 
         var marker = new google.maps.Marker({
@@ -80,15 +85,6 @@ PinFoodMap = {
         });
 
         marker.setMap(PinFoodMap.map);
-    },
-  
-    addSampleMarker: function (pos) {
-        var sampleMarker = new google.maps.Marker({
-            position: pos,
-            title: "Fucking funziona!"
-        });
-
-        sampleMarker.setMap(PinFoodMap.map);
     },
     
     
