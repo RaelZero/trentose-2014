@@ -1,10 +1,183 @@
+@media screen and (max-width: 600px) {.login {font-size:80%}}
+@media screen and (min-width: 600px) {.login {font-size:90%}}
+@media screen and (min-width: 1000px) {.login {font-size:100%}}
+@media screen and (min-width: 1200px) {.login {font-size:110%}}
+
 header{
     position: static;
-    height: 15%;
+    top: 0px;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 50px;
     background-color: #06569E;
+    vertical-align: middle;
+    z-index: 6;
+}
+
+#map{
+    width: 100%;
+    height: 550px;
+}
+
+.click{
+    float: right;
+    position: relative;
+    max-width: auto;
+    max-height: auto;
+    margin-right: 2px;
+    height: inherit;
+    width: inherit;
+}
+
+.click > img{
+    max-width: 230px;
+    max-height: 70%;
+    width: inherit;
+    height: inherit;
+    z-index: -1;
+    
+}
+img.logo {
+    max-width: 230px;
+    max-height: 100%;
+    width: inherit;
+    height: inherit;
+    z-index: -1;
 }
 
 footer{
-    height: 15%;
-    background-color: #CCCCCC;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 5%;
+    background-color: gray;
+    font-family: Verdana;
+    font-weight:bold;
 }
+
+.login {
+	background-color:#79C9FF;
+	border-radius: 5px;
+	text-indent: 0;
+	border: 1px solid #79C9FF;
+    display: inline-block;
+	font-family: Trebuchet MS;
+	font-weight: bold;
+	font-style: normal;
+	line-height: 40px;
+	text-align: center;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size:  ;
+    
+}
+
+.overlay {
+	z-index: 5;
+	background: rgba(0, 0, 0, .50);
+	display: block;
+	position: fixed;
+    top: 0;
+    left: 0;
+	width: 100%;
+	height: 100%;
+}
+ 
+.popup_login{
+	padding: 10px 10px 35px;
+	background: rgba(255, 255, 255, .5);
+	z-index: 999;
+	display: none;
+	position: absolute;
+    top: 60px;
+	right: 0;
+    text-align:center;
+    border-radius: 5px;
+    font-family: Trebuchet MS;
+}
+.popup_add{
+	padding: 10px 10px 35px;
+	background: rgba(255, 255, 255, .5);
+	z-index: 999;
+	display: none;
+	position: absolute;
+    top: 60px;
+	right: 0;
+    text-align:center;
+    border-radius: 5px;
+    font-family:Trebuchet MS;
+}
+
+.popup_add span{
+    display: block;
+    width: 100px;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.popup_search{
+	padding: 10px 10px 35px;
+	background: rgba(255, 255, 255, .5);
+	z-index: 999;
+	display: none;
+	position: absolute;
+    top: 60px;
+	right: 0;
+    text-align:center;
+    border-radius: 5px;
+    font-family:Trebuchet MS;
+}
+.popup_search span{
+    display: block;
+    width: 100px;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+.pin{
+    margin-top: 200px;
+    margin-left: 400px;
+    z-index: 999;
+    position: absolute;
+}
+.popup_pin{
+	padding: 10px 10px 35px;
+	background: rgba(255, 255, 255, .5);
+	z-index: 999;
+	display: none;
+	position: absolute;
+    top: 200px;
+	right: 0;
+    text-align:center;
+    border-radius: 5px;
+    font-family:Trebuchet MS;
+}
+.popup_pin span{
+    display: block;
+    width: 100px;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+img{
+    width:60px;
+}
+<!-- Volevamo cambiare il tasto del log in nel popup....
+blog {
+	background-color:#FC7624;
+	border-radius: 7px;
+	text-indent:0;
+	border:1px solid #DF3A01;
+	font-family:Trebuchet MS;
+	font-size:12px;
+	font-weight:bold;
+	font-style:normal;
+	line-height:35px;
+	width:78px;
+	text-align:center;
+    margin-left:2px;
+    margin-right:2px;
+}-->
