@@ -1,6 +1,4 @@
 var markerMode = false;
-// Global only because I'm lazy
-var map = null;
 
 $(document).ready (function() {
     console.log("Conditions could hardly be more ideal!");
@@ -12,7 +10,6 @@ $(document).ready (function() {
     if (navigator.geolocation) {
         // On success, calls back to PinFoodMap.loadMap
         navigator.geolocation.getCurrentPosition(PinFoodMap.loadMap);
-        console.log(map);
     }
     else {
       alert('geolocation not supported');
@@ -27,7 +24,6 @@ $(document).ready (function() {
     $(".add").click(function( ) {
         markerMode = !markerMode;
         
-        /*
         if(markerMode){
             $(".popup_add").show();
             $(".overlay").show();
@@ -39,7 +35,6 @@ $(document).ready (function() {
             $(".overlay").hide();
             $(".add").css('z-index', '0');
         }
-        */
     });
     
     $(".search").click(function( ) {
@@ -60,28 +55,19 @@ $(document).ready (function() {
         $("div[class*='popup_']").hide();
     });
     
-    var mapOverlay = new google.maps.OverlayView();
-    mapOverlay.draw = function() {};
-    mapOverlay.setMap(map);
     
+    // TO-DO: Why does this get called BEFORE the initialization if in the document.ready section it's actually called AFTER it? :O
+    PinFoodMap.addSampleMarker(new google.maps.LatLng(45.0, 12.0));
     
-    /*
-    // Click event catcher for the map
-    google.maps.event.addListener(PinFoodMap.map, 'click', function(){
-        if(markerMode){
-            map newPin = overlay.getProjection().fromContainerPixelToLatLng(new google.maps.Point(x, y));
-            var newMarker = new google.maps.Marker(position: newPin, map : PinFoodMap.map);
-        }
-    });
-    
-    */
-
 });
 
 
 PinFoodMap = {
+    map: null,
+    
     loadMap : function (position) {
-     
+        console.log("Initializing map");
+        
         // Position conversion
         var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         
@@ -94,8 +80,8 @@ PinFoodMap = {
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         
-        map = new google.maps.Map(document.getElementById("map"), myOptions);
-        console.log(map);
+        PinFoodMap.map = new google.maps.Map(document.getElementById("map"), myOptions);
+        console.log(PinFoodMap.map);
     
         var povo = new google.maps.LatLng(46.066145, 11.150349);
 
@@ -104,20 +90,26 @@ PinFoodMap = {
             title : "Marker gnurante"
         });
 
-        marker.setMap(map);
+        marker.setMap(PinFoodMap.map);
     },
   
     addSampleMarker: function (pos) {
+        console.log("Adding sample marker");
         var sampleMarker = new google.maps.Marker({
             position: pos,
-            title: "Fucking funziona!"
+            title: "Fucking funziona!",
+            map: PinFoodMap.map
         });
-
-        sampleMarker.setMap(PinFoodMap.map);
     },
     
-    
-    addPin: function () {
-    
+    addMarker : function(place){
+        var coords = new google.maps.LatLng(place.lat, place.lng);
+        
+        var marker = new google.maps.Marker({
+          position: coords, 
+          map: GeoPin.map, 
+          title: place.name
+        });          
     }
+    
 };
