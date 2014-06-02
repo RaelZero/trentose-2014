@@ -43,12 +43,10 @@ function pin_load (){
 
 
 // funzione per l'inserimento del pin
-// @PARAM array associativo contenente 'nome' 'address' 'picture' 'street' 'city' 'state' 'country' 'latitude' 'longitude'
 
 function pin_insert ($place){
-    $PIN_INSERT_SQL = "INSERT INTO trentose.places".
-                      " values (:place_name, :place_lat, :place_lng, :place_tag)";
-    
+    $PIN_INSERT_SQL = "INSERT INTO trentose.places(name, loc_latitude, loc_longitude)" . "VALUES (:place_name, :place_lat, :place_lng)";
+
     try {
         // open database
         $dbh = db_connect(); 
@@ -58,13 +56,13 @@ function pin_insert ($place){
         $stmt->bindValue(':place_name', $place['name']);
         $stmt->bindValue(':place_lat', $place['lat']);
         $stmt->bindValue(':place_lng', $place['lng']);
-        $stmt->bindValue(':place_tag', $place['tag'];)
+
+        echo $stmt;
 
         $stmt->execute();
 
         // close database
-        $dbh = null;
-
+        $dbh = null;;
     }
     catch(PDOException $e){
         echo $e->getMessage();
