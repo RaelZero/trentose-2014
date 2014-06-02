@@ -1,7 +1,6 @@
 <?php
 
-function db_connect()
-{
+function db_connect(){
     $host = "localhost";
     $dbname = "trentose";
     $user = "trentose";
@@ -11,7 +10,7 @@ function db_connect()
     
     echo ("Now connected to DB." . PHP_EOL);
     echo (PHP_EOL . $connection);
-    
+
     return $connection;
 }
 
@@ -35,6 +34,7 @@ function pin_load (){
 
 	fwrite($fp, json_encode($rows));
     fclose($fp);
+
     echo("Finished writing on JSON file, should now availible at pins.json\n");
 	
     // close database
@@ -42,34 +42,49 @@ function pin_load (){
 }
 
 /*
+// funzione per l'inserimento del pin
+// @PARAM array associativo contenente 'nome' 'address' 'picture' 'street' 'city' 'state' 'country' 'latitude' 'longitude'
+
 function pin_insert ($place){
-    $PIN_INSERT_SQL = "INSERT INTO places(name, address, lat, lng)".
-                      " values (:place_name, :place_address, :place_lat, :place_lng)";
+    $PIN_INSERT_SQL = "INSERT INTO trentose.places(name,description,picture,loc_street,loc_city,loc_state,loc_country,loc_latitude, loc_longitude)".
+                      " values (:place_name, :place_description, :place_picture, :place_loc_street, :place_loc_city, :place_loc_state,:place_loc_country, :place_loc_latitude, :place_loc_longitude)";
     
     try {
         // open database
         $dbh = db_connect(); 
-        
+
         $stmt = $dbh->prepare($PIN_INSERT_SQL); 
-        
-        $stmt->bindValue(':place_name', $place['name']);        
-        $stmt->bindValue(':place_address', $place['address']);
-        $stmt->bindValue(':place_lat', $place['lat']);
-        $stmt->bindValue(':place_lng', $place['lng']);                
-        
-        $stmt->execute();        
-        
+
+        $stmt->bindValue(':place_name', $place['name']);
+        $stmt->bindValue(':place_description', $place['address']);
+        $stmt->bindValue(':place_picture', $place['picture']);
+        $stmt->bindValue(':place_loc_street', $place['street']);
+	$stmt->bindValue(':place_loc_city', $place['city']);
+	$stmt->bindValue(':place_loc_state', $place['state']);
+	$stmt->bindValue(':place_loc_country', $place['country']);
+	$stmt->bindValue(':place_loc_latitude', $place['latitude']);
+	$stmt->bindValue(':place_loc_longitude', $place['longitude']);
+
+        $stmt->execute();
+
         // close database
         $dbh = null;
-        
+
     }
     catch(PDOException $e){
         echo $e->getMessage();
-    } 
-} 
-  
-*/
+    }
+}
+
+
+function calculate_users_score($user,)
+{
+	
+}
+
+
 
 pin_load();
- 
+*/
+
 ?>
