@@ -25,6 +25,17 @@ $(document).ready (function() {
         markerMode = !markerMode;
         
         if(markerMode){
+            for(i = 0; i < 100; i++){
+                $(".add").fadeOut(500);
+                $(".add").fadeIn(500);
+            }
+        }
+        
+        else
+            $(".add").fadeTo(1, 500);
+        
+        /*
+        if(markerMode){
             $(".popup_add").show();
             $(".overlay").show();
             $(".add").css('z-index', '7');
@@ -35,6 +46,7 @@ $(document).ready (function() {
             $(".overlay").hide();
             $(".add").css('z-index', '0');
         }
+        */
     });
     
     $(".search").click(function( ) {
@@ -43,7 +55,8 @@ $(document).ready (function() {
     });
     
     $(".pin").click(function( ) {
-        $(".pin").append(''); $(".popup_pin").show();
+        $(".pin").append('');
+        $(".popup_pin").show();
         $(".overlay").show();
     });
     
@@ -56,17 +69,40 @@ $(document).ready (function() {
     });
     
     
-    $("#map").on("onMapLoaded", function(data){
-        
-        // Pins parsing from res/pins.json
+    $("#map").on("onMapLoaded", function() {
+        // Pin parsing from res/pins.json
         var pins = [];
         
-        $.getJSON("res/pins.json", function(pins){
+        $.getJSON("res/pins.json", function(pins) {
             for(var i = 0; i < pins.length; i++)
-                PinFoodMap.addMarker(pins[i]);   
+                PinFoodMap.addMarker(pins[i]);
+        });        
+        
+        $("#map").click(function() {
+            if(markerMode){
+                // On click event, get position over the map.
+                google.maps.event.addListener(PinFoodMap.map, 'click', function(event) {
+                    //PinFoodMap.addMarker(event.latLng);
+                    
+                    var newPinLat = event.latLng.lat();
+                    var newPinLng = event.latLng.lng();
+                    
+                    
+                    console.log("Here, have a pin at " + newPinLat + ", " + newPinLng);
+                });
+                
+                // Open the pin adding overlay
+                
+                // On click of the "insert" button, send it over to the PHP and DB managing
+                
+                // Reload page
+            }    
+            
         });
         
+        
     });
+    
     
 });
 
@@ -118,10 +154,9 @@ PinFoodMap = {
         var coords = new google.maps.LatLng(place.loc_latitude, place.loc_longitude);
         
         var marker = new google.maps.Marker({
-          position: coords, 
-          map: PinFoodMap.map,
-          title: place.name
-        });          
+            position: coords, 
+            map: PinFoodMap.map,
+            title: place.name
+        });
     }
-    
 };
