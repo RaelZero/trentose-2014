@@ -56,7 +56,7 @@
                     <p><span class="title">Sito Web</span> <input name="website" type="url" /></p>
                     <p><span class="title">Tags</span> <input name="tags" type="text" /></p>
                     <p><input class="submit" name="add" type="submit" value="Aggiungi" /></p>
-                </div>
+                </form>
             </div>
             
             <div class="popup_pin">
