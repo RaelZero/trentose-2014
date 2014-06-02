@@ -56,9 +56,16 @@ $(document).ready (function() {
     });
     
     
-    // TO-DO: Why does this get called BEFORE the initialization if in the document.ready section it's actually called AFTER it? :O
-    $("#map").on("onMapLoaded", function(){
-        PinFoodMap.addSampleMarker(new google.maps.LatLng(45.0, 12.0));
+    $("#map").on("onMapLoaded", function(data){
+        
+        // Pins parsing from res/pins.json
+        var pins = [];
+        
+        $.getJSON("res/pins.json", function(pins){
+            for(var i = 0; i < pins.length; i++)
+                PinFoodMap.addMarker(pins[i]);   
+        });
+        
     });
     
 });
@@ -68,7 +75,7 @@ PinFoodMap = {
     map: null,
     
     loadMap : function (position) {
-        console.log("Initializing map");
+        console.log("Initializing map...");
         
         // Position conversion
         var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -93,8 +100,8 @@ PinFoodMap = {
         });
 
         marker.setMap(PinFoodMap.map);
-        $("#map").trigger("onMapLoaded");
         
+        $("#map").trigger("onMapLoaded");
     },
   
     addSampleMarker: function (pos) {
@@ -107,7 +114,8 @@ PinFoodMap = {
     },
     
     addMarker : function(place){
-        var coords = new google.maps.LatLng(place.lat, place.lng);
+        console.log("Adding " + place.name + "...");
+        var coords = new google.maps.LatLng(place.loc_latitude, place.loc_longitude);
         
         var marker = new google.maps.Marker({
           position: coords, 
