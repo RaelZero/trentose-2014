@@ -8,8 +8,8 @@ function db_connect(){
 
     $connection = mysql_connect($host,$user,$pass);
     
-    echo ("Now connected to DB." . PHP_EOL);
-    echo (PHP_EOL . $connection);
+    //echo ("Now connected to DB." . PHP_EOL);
+    //echo (PHP_EOL . $connection);
 
     return $connection;
 }

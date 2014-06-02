@@ -1,7 +1,7 @@
 var markerMode = false;
 var lastClick = null;
 
-$(document).ready (function() {
+$(document).ready(function () {
     console.log("Conditions could hardly be more ideal!");
     
     // Start by hiding the overlay from the main window
@@ -13,20 +13,20 @@ $(document).ready (function() {
         navigator.geolocation.getCurrentPosition(PinFoodMap.loadMap);
     }
     else {
-      alert('geolocation not supported');
+        alert('geolocation not supported');
     }
     
     // Hide & Show operations
-    $(".login").click(function( ) {
+    $(".login").click(function () {
         $(".popup_login").show();
         $(".overlay").show();
     });
     
-    $(".add").click(function() {
+    $(".add").click(function () {
         markerMode = !markerMode;
         
-        if(markerMode){
-            for(i = 0; i < 100; i++){
+        if (markerMode) {
+            for (i = 0; i < 100; i++){
                 $(".add").fadeOut(500);
                 $(".add").fadeIn(500);
             }
@@ -55,7 +55,7 @@ $(document).ready (function() {
         $(".overlay").show();
     });
     
-    $(".pin").click(function( ) {
+    $(".pin").click(function() {
         $(".pin").append('');
         $(".popup_pin").show();
         $(".overlay").show();
@@ -75,7 +75,7 @@ $(document).ready (function() {
         var pins = [];
         
         $.getJSON("res/pins.json", function(pins) {
-            for(var i = 0; i < pins.length; i++)
+            for (var i = 0; i < pins.length; i++)
                 PinFoodMap.addMarker(pins[i]);
         });        
         
@@ -103,16 +103,17 @@ $(document).ready (function() {
                 $(".submit").click(function(){
                     var place = {
                         opt: "insert",
-                        lat: newPinLat;
-                        lng: newPinLng;
-                        name: $("input[name=name]").val();
-                        loc_street: $("input[name=loc_street]").val();
-                        loc_city: $("input[name=loc_city]").val();
+                        lat: newPinLat,
+                        lng: newPinLng,
+                        name: $("input[name=name]").val(),
+                        loc_street: $("input[name=loc_street]").val(),
+                        loc_city: $("input[name=loc_city]").val()
                     };
                     
-                    $.post("index.php", place).done(function(){
+                    $.post("index.php", place).done(function() {
                         window.location.reload();
                     });
+                    
                     
                     console.log("Testing the submit function!");
                 });
