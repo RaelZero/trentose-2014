@@ -3,8 +3,8 @@
 require "pinfood.php";
 
 // Adding a pin in the DB
-if (isset($_POST['opt']) && $_POST['opt'] == "insert"){
-    echo "OMG IT'S WORKING";
+if (isset($_POST['name']) && $_POST['name'] != ""){
+  //  echo $_POST['name'];
 }
 
 pin_load();
