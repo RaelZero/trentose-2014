@@ -97,6 +97,9 @@ $(document).ready (function() {
                 console.log("Here, have a pin at " + newPinLat + ", " + newPinLng);
                 
                 // Open the pin adding overlay
+                $(".overlay").show();
+                $(".popup_add").show();
+                $(".add").stop();
                 
                 // On click of the "insert" button, send it over to the PHP and DB managing
                 
