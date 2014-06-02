@@ -99,6 +99,7 @@ $(document).ready(function () {
                 $(".popup_add").show();
                 $(".add").finish();
                 
+                /*
                 // On click of the "insert" button, send it over to the PHP and DB managing
                 $(".submit").click(function(){
                     var place = {
@@ -117,6 +118,7 @@ $(document).ready(function () {
                     
                     console.log("Testing the submit function!");
                 });
+                */
                 
                 // Reload page
             }    

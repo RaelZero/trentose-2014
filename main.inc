@@ -48,7 +48,7 @@
             
             <button class="click add"><img src="img/addpin.svg" /></button>
              <div class="popup_add">
-                <div>
+                <form action="index.php" method="post">
                     <p><span class="title">Nome</span> <input name="name" type="text" /></p>
                     <p><span class="title">Indirizzo</span> <input name="loc_street" type="text" /></p>
                     <p><span class="title">Città</span> <input name="loc_city" type="text" /></p>
