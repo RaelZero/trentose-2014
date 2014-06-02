@@ -46,8 +46,8 @@ function pin_load (){
 // @PARAM array associativo contenente 'nome' 'address' 'picture' 'street' 'city' 'state' 'country' 'latitude' 'longitude'
 
 function pin_insert ($place){
-    $PIN_INSERT_SQL = "INSERT INTO trentose.places(name,description,picture,loc_street,loc_city,loc_state,loc_country,loc_latitude, loc_longitude)".
-                      " values (:place_name, :place_description, :place_picture, :place_loc_street, :place_loc_city, :place_loc_state,:place_loc_country, :place_loc_latitude, :place_loc_longitude)";
+    $PIN_INSERT_SQL = "INSERT INTO trentose.places".
+                      " values (:place_name, :place_lat, :place_lng, :place_tag)";
     
     try {
         // open database
@@ -56,14 +56,9 @@ function pin_insert ($place){
         $stmt = $dbh->prepare($PIN_INSERT_SQL); 
 
         $stmt->bindValue(':place_name', $place['name']);
-        $stmt->bindValue(':place_description', NULL);
-        $stmt->bindValue(':place_picture', NULL);
-        $stmt->bindValue(':place_loc_street', $place['street']);
-        $stmt->bindValue(':place_loc_city', $place['city']);
-	    $stmt->bindValue(':place_loc_state', $place['state']);
-	    $stmt->bindValue(':place_loc_country', $place['country']);
-	    $stmt->bindValue(':place_loc_latitude', $place['latitude']);
-	    $stmt->bindValue(':place_loc_longitude', $place['longitude']);
+        $stmt->bindValue(':place_lat', $place['lat']);
+        $stmt->bindValue(':place_lng', $place['lng']);
+        $stmt->bindValue(':place_tag', $place['tag'];)
 
         $stmt->execute();
 

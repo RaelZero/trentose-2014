@@ -99,6 +99,10 @@ $(document).ready(function () {
                 $(".popup_add").show();
                 $(".add").finish();
                 
+                $("input[name=lat]").val(newPinLat);
+                $("input[name=lng]").val(newPinLng);
+                
+                
                 /*
                 // On click of the "insert" button, send it over to the PHP and DB managing
                 $(".submit").click(function(){

@@ -55,6 +55,8 @@
                     <p><span class="title">Contatto</span> <input name="loc_number" type="number" /></p>
                     <p><span class="title">Sito Web</span> <input name="website" type="url" /></p>
                     <p><span class="title">Tags</span> <input name="tags" type="text" /></p>
+                    <p><span class="title">Lat</span> <input name="lat" type="text" value="" /></p>
+                    <p><span class="title">Lng</span> <input name="lng" type="text" value="" /></p>
                     <p><input class="submit" name="add" type="submit" value="Aggiungi" /></p>
                 </form>
             </div>
