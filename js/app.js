@@ -32,7 +32,7 @@ $(document).ready (function() {
         }
         
         else
-            $(".add").fadeTo(1, 500);
+            $(".add").stop();
         
         /*
         if(markerMode){
