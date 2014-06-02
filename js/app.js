@@ -78,18 +78,20 @@ $(document).ready (function() {
                 PinFoodMap.addMarker(pins[i]);
         });        
         
+        google.maps.event.addListener(PinFoodMap.map, 'click', function(event) {
+            //PinFoodMap.addMarker(event.latLng);
+                    
+            var newPinLat = event.latLng.lat();
+            var newPinLng = event.latLng.lng();
+                    
+                    
+        });
+        
         $("#map").click(function() {
             if(markerMode){
                 // On click event, get position over the map.
-                google.maps.event.addListener(PinFoodMap.map, 'click', function(event) {
-                    //PinFoodMap.addMarker(event.latLng);
-                    
-                    var newPinLat = event.latLng.lat();
-                    var newPinLng = event.latLng.lng();
-                    
-                    
-                    console.log("Here, have a pin at " + newPinLat + ", " + newPinLng);
-                });
+            
+                console.log("Here, have a pin at " + newPinLat + ", " + newPinLng);
                 
                 // Open the pin adding overlay
                 
