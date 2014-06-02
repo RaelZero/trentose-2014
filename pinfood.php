@@ -35,7 +35,7 @@ function pin_load (){
 	fwrite($fp, json_encode($rows));
     fclose($fp);
 
-    echo("Finished writing on JSON file, should now availible at pins.json\n");
+    // echo("Finished writing on JSON file, should now availible at pins.json\n");
 	
     // close database
 	$dbh = null;    

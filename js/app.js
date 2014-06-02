@@ -22,7 +22,7 @@ $(document).ready (function() {
         $(".overlay").show();
     });
     
-    $(".add").click(function( ) {
+    $(".add").click(function() {
         markerMode = !markerMode;
         
         if(markerMode){
@@ -93,18 +93,27 @@ $(document).ready (function() {
                 
                 var newPinLat = lastClick.latLng.lat();
                 var newPinLng = lastClick.latLng.lng();
-            
-                console.log("Here, have a pin at " + newPinLat + ", " + newPinLng);
                 
                 // Open the pin adding overlay
                 $(".overlay").show();
                 $(".popup_add").show();
                 $(".add").finish();
                 
-                
-                
                 // On click of the "insert" button, send it over to the PHP and DB managing
                 $(".submit").click(function(){
+                    var place = {
+                        opt: "insert",
+                        lat: newPinLat;
+                        lng: newPinLng;
+                        name: $("input[name=name]").val();
+                        loc_street: $("input[name=loc_street]").val();
+                        loc_city: $("input[name=loc_city]").val();
+                    };
+                    
+                    $.post("index.php", place).done(function(){
+                        window.location.reload();
+                    });
+                    
                     console.log("Testing the submit function!");
                 });
                 
@@ -116,10 +125,11 @@ $(document).ready (function() {
         
     });
     
+    /*
     $(".submit").click(function(){
         
-        
     });
+    */
     
 });
 
