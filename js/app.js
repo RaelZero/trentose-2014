@@ -99,7 +99,9 @@ $(document).ready (function() {
                 // Open the pin adding overlay
                 $(".overlay").show();
                 $(".popup_add").show();
-                $(".add").stop();
+                $(".add").finish();
+                
+                
                 
                 // On click of the "insert" button, send it over to the PHP and DB managing
                 
