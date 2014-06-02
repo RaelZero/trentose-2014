@@ -38,8 +38,6 @@
             <button class="click login">Login</button>
             <div class="popup_login">
                 <form>
-                    <p><span class="title">Username</span> <input name="" type="text" /></p>
-                    <p><span class="title">Password</span> <input name="" type="password" /></p>
                     <p><input name="" type="button" value="Login" /></p>
                     <p><input name="" type="button" value="Crea Account" /></p>
                 </form>

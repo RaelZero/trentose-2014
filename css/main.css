@@ -6,10 +6,15 @@
 header{
     position: static;
     top: 0px;
-    height: auto;
+    
+    /* TEMPORANEO, intanto funziona */
+    height: 50px;
+    
     width: auto;
     max-width: 100%;
-    max-height: 50px;
+    /* DA RICONTROLLARE 
+    height: auto;
+    max-height: 50px;*/
     background-color: #06569E;
     vertical-align: middle;
     z-index: 6;
