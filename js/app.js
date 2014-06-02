@@ -104,6 +104,9 @@ $(document).ready (function() {
                 
                 
                 // On click of the "insert" button, send it over to the PHP and DB managing
+                $(".submit").click(function(){
+                    console.log("Testing the submit function!");
+                });
                 
                 // Reload page
             }    
@@ -113,6 +116,10 @@ $(document).ready (function() {
         
     });
     
+    $(".submit").click(function(){
+        
+        
+    });
     
 });
 

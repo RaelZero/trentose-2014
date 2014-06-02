@@ -48,14 +48,14 @@
             
             <button class="click add"><img src="img/addpin.svg" /></button>
              <div class="popup_add">
-                <form action="index.php">
+                <form>
                     <p><span class="title">Nome</span> <input name="name" type="text" /></p>
                     <p><span class="title">Indirizzo</span> <input name="loc_street" type="text" /></p>
                     <p><span class="title">Città</span> <input name="loc_city" type="text" /></p>
-                    <p><span class="title">Contatto</span> <input name="" type="number" /></p>
-                    <p><span class="title">Sito Web</span> <input name="" type="url" /></p>
-                    <p><span class="title">Tags</span> <input name="" type="text" /></p>
-                    <p><input name="" type="submit" value="Aggiungi" /></p>
+                    <p><span class="title">Contatto</span> <input name="loc_number" type="number" /></p>
+                    <p><span class="title">Sito Web</span> <input name="website" type="url" /></p>
+                    <p><span class="title">Tags</span> <input name="tags" type="text" /></p>
+                    <p><input class="submit" name="add" type="submit" value="Aggiungi" /></p>
                 </form>
             </div>
             

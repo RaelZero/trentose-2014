@@ -2,7 +2,13 @@
 
 require "pinfood.php";
 
-if (isset($_POST['opt'] && $_POST['opt'] == "insert")){
+// Adding a pin in the DB
+if (isset($_POST['add'])){
+    $place[0] = $_POST['name'];
+    $place[1] = $_POST['loc_street'];
+    $place[2] = $_POST['loc_city'];
+    $place[3] = $_POST['loc_number'];
+    $place[4] = $_POST['website'];
     
 }
 

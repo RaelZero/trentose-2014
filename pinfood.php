@@ -41,7 +41,7 @@ function pin_load (){
 	$dbh = null;    
 }
 
-/*
+
 // funzione per l'inserimento del pin
 // @PARAM array associativo contenente 'nome' 'address' 'picture' 'street' 'city' 'state' 'country' 'latitude' 'longitude'
 
@@ -56,14 +56,14 @@ function pin_insert ($place){
         $stmt = $dbh->prepare($PIN_INSERT_SQL); 
 
         $stmt->bindValue(':place_name', $place['name']);
-        $stmt->bindValue(':place_description', $place['address']);
-        $stmt->bindValue(':place_picture', $place['picture']);
+        $stmt->bindValue(':place_description', NULL);
+        $stmt->bindValue(':place_picture', NULL);
         $stmt->bindValue(':place_loc_street', $place['street']);
-	$stmt->bindValue(':place_loc_city', $place['city']);
-	$stmt->bindValue(':place_loc_state', $place['state']);
-	$stmt->bindValue(':place_loc_country', $place['country']);
-	$stmt->bindValue(':place_loc_latitude', $place['latitude']);
-	$stmt->bindValue(':place_loc_longitude', $place['longitude']);
+        $stmt->bindValue(':place_loc_city', $place['city']);
+	    $stmt->bindValue(':place_loc_state', $place['state']);
+	    $stmt->bindValue(':place_loc_country', $place['country']);
+	    $stmt->bindValue(':place_loc_latitude', $place['latitude']);
+	    $stmt->bindValue(':place_loc_longitude', $place['longitude']);
 
         $stmt->execute();
 
@@ -75,16 +75,5 @@ function pin_insert ($place){
         echo $e->getMessage();
     }
 }
-
-
-function calculate_users_score($user,)
-{
-	
-}
-
-
-
-pin_load();
-*/
 
 ?>
