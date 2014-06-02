@@ -1,4 +1,5 @@
 var markerMode = false;
+var lastClick = null;
 
 $(document).ready (function() {
     console.log("Conditions could hardly be more ideal!");
@@ -81,8 +82,7 @@ $(document).ready (function() {
         google.maps.event.addListener(PinFoodMap.map, 'click', function(event) {
             //PinFoodMap.addMarker(event.latLng);
                     
-            var newPinLat = event.latLng.lat();
-            var newPinLng = event.latLng.lng();
+            lastClick = event;
                     
                     
         });
@@ -90,6 +90,9 @@ $(document).ready (function() {
         $("#map").click(function() {
             if(markerMode){
                 // On click event, get position over the map.
+                
+                var newPinLat = lastClick.latLng.lat();
+                var newPinLng = lastClick.latLng.lng();
             
                 console.log("Here, have a pin at " + newPinLat + ", " + newPinLng);
                 
