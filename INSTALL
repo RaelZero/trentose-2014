@@ -1,0 +1,22 @@
+NSTALLATION
+
+- Requires:
+    - Apache
+        - PHP
+    - MySQL
+                
+- Clone this repo on htdocs/http folder of your webserver
+
+- Create an empty database named trentose on your server and take note of your credentials
+
+- Edit them on pinfood.php
+
+- Run sweng129.sql on your database
+
+- Point your browser to http://yourdomain.com/yourfolder/trentose/
+
+- Enjoy what's there and blame us for what is not! :D
+
+- NOTE: At the time of writing, all of the pins are in Trento. Since we're using geoloc, you may need to pan the map all the way to Trento!
+
+- NOTE: The latest version will be availible at http://storm.otshq.net/trentose/
