@@ -6,6 +6,9 @@
 
         <!-- stylesheet link -->
         <link rel="stylesheet" href="css/main.css">
+
+        <!-- Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
         
         <!-- Linked libraries: JQuery, GMaps API -->
         <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
@@ -16,7 +19,6 @@
         
         <!-- Our scripts -->
         <script type="text/javascript" src="js/app.js"></script>
-        <!--<script type="text/javascript" src="js/gmaps.js"></script>-->
     </head>
     
     <body>

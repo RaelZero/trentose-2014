@@ -10,6 +10,7 @@ if (isset($_POST['name']) && $_POST['name'] != ""){
         "lat" => $_POST['lat'],
         "lng" => $_POST['lng'],
     );
+
     pin_insert($place);
 }
 

@@ -45,7 +45,7 @@ function pin_load (){
 // funzione per l'inserimento del pin
 
 function pin_insert ($place){
-    $PIN_INSERT_SQL = "INSERT INTO trentose.places(name, loc_latitude, loc_longitude)" . "VALUES (:place_name, :place_lat, :place_lng)";
+    $PIN_INSERT_SQL = "INSERT INTO trentose.places(name, loc_latitude, loc_longitude)" . " VALUES(:place_name, :place_lat, :place_lng)";
 
     try {
         // open database
@@ -57,12 +57,10 @@ function pin_insert ($place){
         $stmt->bindValue(':place_lat', $place['lat']);
         $stmt->bindValue(':place_lng', $place['lng']);
 
-        echo $stmt;
-
         $stmt->execute();
 
         // close database
-        $dbh = null;;
+        $dbh = null;
     }
     catch(PDOException $e){
         echo $e->getMessage();

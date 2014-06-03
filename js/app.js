@@ -101,42 +101,12 @@ $(document).ready(function () {
                 
                 $("input[name=lat]").val(newPinLat);
                 $("input[name=lng]").val(newPinLng);
-                
-                
-                /*
-                // On click of the "insert" button, send it over to the PHP and DB managing
-                $(".submit").click(function(){
-                    var place = {
-                        opt: "insert",
-                        lat: newPinLat,
-                        lng: newPinLng,
-                        name: $("input[name=name]").val(),
-                        loc_street: $("input[name=loc_street]").val(),
-                        loc_city: $("input[name=loc_city]").val()
-                    };
-                    
-                    $.post("index.php", place).done(function() {
-                        window.location.reload();
-                    });
-                    
-                    
-                    console.log("Testing the submit function!");
-                });
-                */
-                
-                // Reload page
             }    
             
         });
         
         
     });
-    
-    /*
-    $(".submit").click(function(){
-        
-    });
-    */
     
 });
 
@@ -162,27 +132,9 @@ PinFoodMap = {
         PinFoodMap.map = new google.maps.Map(document.getElementById("map"), myOptions);
         console.log(PinFoodMap.map);
     
-        var povo = new google.maps.LatLng(46.066145, 11.150349);
-
-        var marker = new google.maps.Marker({
-            position : povo,
-            title : "Marker gnurante"
-        });
-
-        marker.setMap(PinFoodMap.map);
-        
         $("#map").trigger("onMapLoaded");
     },
   
-    addSampleMarker: function (pos) {
-        console.log("Adding sample marker");
-        var sampleMarker = new google.maps.Marker({
-            position: pos,
-            title: "Fucking funziona!",
-            map: PinFoodMap.map
-        });
-    },
-    
     addMarker : function(place){
         console.log("Adding " + place.name + "...");
         var coords = new google.maps.LatLng(place.loc_latitude, place.loc_longitude);
